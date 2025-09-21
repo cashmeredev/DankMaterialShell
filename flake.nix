@@ -55,11 +55,6 @@
               configs.DankMaterialShell = "${
                 self.packages.${system}.dankMaterialShell
               }/etc/xdg/quickshell/DankMaterialShell/";
-              activeConfig = lib.mkIf cfg.enableSystemd "DankMaterialShell";
-              systemd = lib.mkIf cfg.enableSystemd {
-                enable = true;
-                target = "graphical-session.target";
-              };
             };
 
             home.packages = with pkgs; [
